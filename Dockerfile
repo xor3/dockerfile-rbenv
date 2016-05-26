@@ -7,7 +7,8 @@ RUN git clone https://github.com/rbenv/rbenv.git /root/.rbenv
 RUN git clone https://github.com/rbenv/ruby-build.git /root/.rbenv/plugins/ruby-build
 RUN /root/.rbenv/plugins/ruby-build/install.sh
 ENV PATH /root/.rbenv/bin:$PATH
-RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh # or /etc/profile
+# RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh # or /etc/profile
+RUN echo 'export PATH=/root/.rbenv/bin:$PATH' >> .bashrc
 RUN echo 'eval "$(rbenv init -)"' >> .bashrc
 
 # Install multiple versions of ruby
